@@ -1,0 +1,17 @@
+;; ESS for R
+
+(add-to-list 'load-path "/home/ms/de/sf7/R/ESS/lisp/")
+(load "ess-site.el")
+(autoload 'R-mode "ess-site.el" "ESS" t)
+(autoload 'R-mode "ess-site.el" "ESS" t)
+(autoload 'r-mode "ess-site.el" "ESS" t)
+(autoload 'Rd-mode "ess-site.el" "ESS" t)
+(autoload 'noweb-mode "ess-site.el" "ESS" t)
+(add-to-list 'auto-mode-alist '("\\.R$" . R-mode))
+(add-to-list 'auto-mode-alist '("\\.r$" . R-mode))
+(add-to-list 'auto-mode-alist '("\\.Rd$" . Rd-mode))
+(add-to-list 'auto-mode-alist '("\\.Rnw$" . noweb-mode))
+
+(setq ess-eval-visibly-p nil)
+(setq ess-ask-for-ess-directory nil)
+(require 'ess-eldoc "ess-eldoc" t)
