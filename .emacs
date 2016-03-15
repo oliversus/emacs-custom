@@ -75,8 +75,8 @@
 
 ;; turn off some bars
 (scroll-bar-mode -1)
-(tool-bar-mode -1)
-(menu-bar-mode -1)
+;;(tool-bar-mode -1)
+;;(menu-bar-mode -1)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; marking text and clipboard
@@ -123,12 +123,12 @@
 
 ;; default colour themes
 (if window-system
-    (load-theme 'adwaita t)
-  (load-theme 'wombat t))
+    (load-theme 'deeper-blue t)
+  (load-theme 'deeper-blue t))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; org-mode settings
-(load "/home/ms/de/sf7/emacs.d/org-mode")
+(load "/home/ms/de/sf7/.emacs.d/org-mode")
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Smex
@@ -212,7 +212,7 @@
 
 (global-set-key (kbd "C-x M-t") 'cleanup-region)
 (global-set-key (kbd "C-c n") 'cleanup-buffer)
-(setq-default show-trailing-whitespace t)
+;(setq-default show-trailing-whitespace t)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; flyspell
@@ -224,7 +224,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; language hooks
-(load "/home/ms/de/sf7/emacs.d/language-hooks")
+(load "/home/ms/de/sf7/.emacs.d/language-hooks")
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Colour codes
@@ -237,8 +237,24 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; R
-(load "/home/ms/de/sf7/emacs.d/R")
+(load "/home/ms/de/sf7/.emacs.d/R")
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; default font
-(set-default-font "DejaVu Sans Mono:pixelsize=13:foundry=unknown:weight=normal:slant=normal:width=normal:spacing=100:scalable=true")
+(set-default-font "DejaVu Sans Mono:pixelsize=14:foundry=unknown:weight=normal:slant=normal:width=normal:spacing=100:scalable=true")
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
