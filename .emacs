@@ -16,10 +16,12 @@
 (defvar /perm/ms/de/sf7/emacs/packages '(ac-slime
                                          auto-complete
                                          autopair
+                                         better-defaults
                                          clojure-mode
                                          coffee-mode
                                          csharp-mode
                                          deft
+                                         elpy
                                          erlang
                                          feature-mode
                                          flycheck
@@ -32,9 +34,11 @@
                                          haskell-mode
                                          htmlize
                                          idris-mode
+                                         jedi
                                          magit
                                          markdown-mode
                                          marmalade
+                                         material-theme
                                          nodejs-repl
                                          o-blog
                                          org
@@ -110,8 +114,9 @@
 (global-set-key (kbd "M-/") 'hippie-expand)
 (global-set-key (kbd "C-+") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
-(global-set-key (kbd "C-c C-k") 'compile)
+(global-set-key (kbd "C-x C-k") 'compile)
 (global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-x l") 'recenter)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; misc
@@ -122,9 +127,10 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; default colour themes
-(if window-system
-    (load-theme 'deeper-blue t)
-  (load-theme 'deeper-blue t))
+;; (if window-system
+;;     (load-theme 'deeper-blue t)
+;;   (load-theme 'deeper-blue t))
+(load-theme 'material t)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; org-mode settings
@@ -211,8 +217,8 @@
     (replace-regexp re "" nil beg end)))
 
 (global-set-key (kbd "C-x M-t") 'cleanup-region)
-(global-set-key (kbd "C-c n") 'cleanup-buffer)
-;(setq-default show-trailing-whitespace t)
+(global-set-key (kbd "C-x n") 'cleanup-buffer)
+                                        ;(setq-default show-trailing-whitespace t)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; flyspell
@@ -221,6 +227,12 @@
     (setq-default ispell-program-name "/usr/local/bin/aspell")
   (setq-default ispell-program-name "/usr/bin/aspell"))
 (setq-default ispell-list-command "list")
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; flycheck
+;; (when (require 'flycheck nil t)
+;;   (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+;;   (add-hook 'elpy-mode-hook 'flycheck-mode))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; language hooks
@@ -238,6 +250,13 @@
 
 ;; R
 (load "/home/ms/de/sf7/.emacs.d/R")
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Python
+(elpy-enable)
+(elpy-use-ipython)
+;; (add-hook 'python-mode-hook 'jedi:setup)
+;; (setq jedi:complete-on-dot t) 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; default font
